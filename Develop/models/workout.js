@@ -39,6 +39,6 @@ let WorkoutSchema = new Schema({
 
 
 });
-
+//`seeders/seed.js` expects `models` to export an object with a property `Workout` containing your model.
 const Workout = mongoose.model("workout", WorkoutSchema);
 module.exports = Workout;
