@@ -2,9 +2,12 @@
   "name": "fitness-tracker",
   "version": "1.0.0",
   "description": "This is a workout tracker using MongoDB for the database with a Mongoos schema and Express to handle the routes.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js",
+    "seed": "node seeders/seed.js"
   },
   "repository": {
     "type": "git",
@@ -12,6 +15,11 @@
   },
   "author": "Jon Christie",
   "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.22",
+    "morgan": "^1.10.0"
+  },
   "bugs": {
     "url": "https://github.com/mathcodes/Workout-Tracker/issues"
   },

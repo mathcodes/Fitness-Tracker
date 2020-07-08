@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-let WorkoutSchema = new Schema({
+let Workouts = new Schema({
     day: {
         type: Date,
         default: Date.now
@@ -40,5 +40,5 @@ let WorkoutSchema = new Schema({
 
 });
 //`seeders/seed.js` expects `models` to export an object with a property `Workout` containing your model.
-const Workout = mongoose.model("workout", WorkoutSchema);
+const Workout = mongoose.model("workout", Workouts);
 module.exports = Workout;
