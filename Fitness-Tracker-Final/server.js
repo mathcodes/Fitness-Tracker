@@ -8,11 +8,12 @@ const apiRoutes = require("./routes/api");
 const viewRoutes = require("./routes/html");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 
 mongoose.connect(
-  "mongodb+srv://user:user@mycluster-i5mnv.mongodb.net/workouts?retryWrites=true&w=majority",
+  process.env.MONGODB_URI || 
+  "mongodb://user1:password1@ds157057.mlab.com:57057/heroku_k4j2gkgv",
   {
     useNewUrlParser: true,
     useFindAndModify: false
@@ -25,7 +26,7 @@ app.use(express.static("public"));
 
 app.use(apiRoutes);
 app.use(viewRoutes);
-// app.use(workoutRoutes);
+// app.use(workoutRoutes);  
 
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./public/index.html"));
