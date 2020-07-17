@@ -29,7 +29,8 @@ router.post('/api/workouts', function(req, res) {
 
 //* `GET /api/workouts/range` sends an array of the 7 most recent workouts.
 router.get('/api/workouts/range', function(req, res) {
-    Workout.find({}).then(function(workouts) {
+    Workout.find({}).sort({day: 1}).limit(7)
+        .then(function(workouts) {
         res.json(workouts);
     })
 });
